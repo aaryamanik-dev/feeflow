@@ -1,5 +1,14 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
+import Link from 'next/link' // Add this line here
+
+<div className="mt-8 space-x-4">
+  <Link 
+    href="/students" 
+    className="inline-block px-4 py-2 text-white bg-slate-800 rounded hover:bg-slate-900">
+    Manage Students
+  </Link>
+</div>
 
 export default async function DashboardPage() {
   const supabase = await createClient()

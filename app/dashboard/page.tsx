@@ -1,14 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
-import Link from 'next/link' // Add this line here
-
-<div className="mt-8 space-x-4">
-  <Link 
-    href="/students" 
-    className="inline-block px-4 py-2 text-white bg-slate-800 rounded hover:bg-slate-900">
-    Manage Students
-  </Link>
-</div>
+import Link from 'next/link'
 
 export default async function DashboardPage() {
   const supabase = await createClient()
@@ -37,6 +29,16 @@ export default async function DashboardPage() {
       </h1>
       <p className="mt-2 text-gray-600">Logged in as: {user.email}</p>
       <p className="mt-1 text-sm text-gray-500">Role: <span className="font-semibold uppercase">{membership.role}</span></p>
+      
+      {/* Navigation Links */}
+      <div className="mt-8 space-x-4">
+        <Link 
+          href="/students" 
+          className="inline-block px-4 py-2 text-white bg-slate-800 rounded hover:bg-slate-900"
+        >
+          Manage Students
+        </Link>
+      </div>
       
       <form action={async () => {
         'use server'

@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 
+
 export default async function DashboardPage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
@@ -38,6 +39,12 @@ export default async function DashboardPage() {
         >
           Manage Students
         </Link>
+        <Link 
+    href="/fees" 
+    className="inline-block px-4 py-2 text-white bg-slate-800 rounded hover:bg-slate-900"
+  >
+    Manage Fee Categories
+  </Link>
       </div>
       
       <form action={async () => {

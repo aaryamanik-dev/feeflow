@@ -35,11 +35,6 @@ export default function HomePage() {
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="py-6 text-center text-sm text-slate-500 border-t border-slate-200">
-        FeeFlow — School financial management workspace.
-      </footer>
     </div>
   )
 }
